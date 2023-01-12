@@ -1,9 +1,7 @@
 package com.Shopping.onlineshop.people;
 
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +14,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Customer {
 
+    @Id
+    @GeneratedValue
     private long id ;
     private String firstname;
     private String lastname;
@@ -25,7 +25,12 @@ public class Customer {
     private String address;
     private String postalcode;
     private String email;
-    @OneToOne
-    @JoinColumn(name="user_id")
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            optional = false
+    )
+    @JoinColumn(
+            name="user_id"
+    )
     private User user;
 }

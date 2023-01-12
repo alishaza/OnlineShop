@@ -1,10 +1,7 @@
 package com.Shopping.onlineshop.people;
 
 import com.Shopping.onlineshop.enums.UserRole;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +22,11 @@ public class User {
     private String username;
     private String password;
 
+    @OneToOne(
+            mappedBy = "user",
+            cascade = CascadeType.ALL
+    )
+    private Customer customer;
     private UserRole userRole;
 
     public long getId() {

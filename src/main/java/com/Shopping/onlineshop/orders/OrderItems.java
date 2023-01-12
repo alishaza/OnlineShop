@@ -22,10 +22,11 @@ public class OrderItems {
     private long id;
 
 
-    @OneToOne
+
+    @OneToOne(optional = false)
     private Customer customer;
 
-    @OneToOne
+    @OneToOne(optional = false)
     private Product product;
 
     private Integer count;

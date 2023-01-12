@@ -20,7 +20,10 @@ public class Invoice {
     @GeneratedValue
     private long id;
 
-    @OneToOne
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            optional = false
+    )
     private Customer customer;
 
     private Date invoiceDate;
