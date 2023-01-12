@@ -23,6 +23,7 @@ public class Product {
     private String image;
     private long visitCount;
 
+
     @ManyToOne
     private ProductCategory category;
 

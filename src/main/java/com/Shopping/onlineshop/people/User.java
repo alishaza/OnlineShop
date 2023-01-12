@@ -29,6 +29,24 @@ public class User {
     private Customer customer;
     private UserRole userRole;
 
+    private boolean enable;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
     public long getId() {
         return id;
     }
