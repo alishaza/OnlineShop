@@ -32,6 +32,26 @@ public class Product {
     @ManyToMany
     private List<Feature> features;
 
+    private boolean enable;
+
+    private boolean exists;
+
+    public boolean isExists() {
+        return exists;
+    }
+
+    public void setExists(boolean exists) {
+        this.exists = exists;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
     public long getId() {
         return id;
     }

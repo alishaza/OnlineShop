@@ -17,11 +17,21 @@ public class Slider {
     @Id
     @GeneratedValue
     private long id;
+
     private String title;
     private String link;
     private String image;
     private String description;
     private Integer order;
+    private boolean enable;
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
 
     public long getId() {
         return id;
