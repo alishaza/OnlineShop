@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.entities.site;
+package com.Shopping.onlineshop.products;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.awt.*;
 import java.util.List;
 
 @Entity

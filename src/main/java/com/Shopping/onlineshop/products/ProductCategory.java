@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.entities.site;
+package com.Shopping.onlineshop.products;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,11 +13,21 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Size {
+public class ProductCategory {
     @Id
     @GeneratedValue
+    private long id;
     private String title;
     private String description;
+    private String image;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -33,5 +43,13 @@ public class Size {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

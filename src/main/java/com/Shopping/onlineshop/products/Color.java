@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.entities.site;
+package com.Shopping.onlineshop.products;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
