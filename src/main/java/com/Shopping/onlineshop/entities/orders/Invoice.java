@@ -1,6 +1,6 @@
-package com.Shopping.onlineshop.orders;
+package com.Shopping.onlineshop.entities.orders;
 
-import com.Shopping.onlineshop.people.Customer;
+import com.Shopping.onlineshop.entities.people.Customer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

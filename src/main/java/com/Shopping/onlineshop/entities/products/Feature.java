@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.products;
+package com.Shopping.onlineshop.entities.products;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Color {
+public class Feature {
     @Id
     @GeneratedValue
     private String name;

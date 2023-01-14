@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.products;
+package com.Shopping.onlineshop.entities.products;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

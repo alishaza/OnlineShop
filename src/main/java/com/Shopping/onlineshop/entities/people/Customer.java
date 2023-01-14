@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.people;
+package com.Shopping.onlineshop.entities.people;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;

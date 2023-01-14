@@ -1,6 +1,6 @@
-package com.Shopping.onlineshop.people;
+package com.Shopping.onlineshop.entities.people;
 
-import com.Shopping.onlineshop.enums.UserRole;
+import com.Shopping.onlineshop.entities.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

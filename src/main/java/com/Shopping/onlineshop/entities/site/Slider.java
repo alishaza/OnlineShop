@@ -22,7 +22,7 @@ public class Slider {
     private String link;
     private String image;
     private String description;
-    private Integer order;
+    private Integer itemOrder;
     private boolean enable;
 
     public boolean isEnable() {
@@ -74,10 +74,10 @@ public class Slider {
     }
 
     public Integer getOrder() {
-        return order;
+        return itemOrder;
     }
 
     public void setOrder(Integer order) {
-        this.order = order;
+        this.itemOrder = order;
     }
 }

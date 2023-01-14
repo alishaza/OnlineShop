@@ -1,7 +1,7 @@
-package com.Shopping.onlineshop.orders;
+package com.Shopping.onlineshop.entities.orders;
 
-import com.Shopping.onlineshop.people.Customer;
-import com.Shopping.onlineshop.products.Product;
+import com.Shopping.onlineshop.entities.people.Customer;
+import com.Shopping.onlineshop.entities.products.Product;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
