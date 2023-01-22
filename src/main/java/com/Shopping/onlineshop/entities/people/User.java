@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.people;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import com.Shopping.onlineshop.entities.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-public class User {
+public class User implements GenericEntity<User> {
     @Id
     @GeneratedValue
     private long id;
@@ -45,6 +46,16 @@ public class User {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    @Override
+    public void update(User model) {
+        setEnable(model.isEnable());
+        setFirstName(model.getFirstName());
+        setLastName(model.getLastName());
+        setPassword(model.getPassword());
+        setUserRole(model.getUserRole());
+        setUsername(model.getUsername());
     }
 
     public long getId() {

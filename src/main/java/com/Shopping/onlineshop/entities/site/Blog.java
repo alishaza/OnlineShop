@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.site;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -15,10 +16,11 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Blog {
+public class Blog implements GenericEntity<Blog> {
     @Id
     @GeneratedValue
     private long id;
+
 
     private String title;
     private String subtitle;
@@ -35,6 +37,18 @@ public class Blog {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    @Override
+    public void update(Blog model) {
+        setSubtitle(model.getSubtitle());
+        setTitle(model.getTitle());
+        setDescription(model.getDescription());
+        setImage(model.getImage());
+        setPublishedDate(model.getPublishedDate());
+        setVisitcount(model.getVisitcount());
+        setEnable(model.isEnable());
+
     }
 
     public long getId() {

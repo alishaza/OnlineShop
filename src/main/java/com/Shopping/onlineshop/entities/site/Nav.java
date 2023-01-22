@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.site;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Nav {
+public class Nav implements GenericEntity<Nav> {
     @Id
     @GeneratedValue
     private long id;
@@ -28,6 +29,14 @@ public class Nav {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    @Override
+    public void update(Nav model) {
+        setEnable(model.isEnable());
+        setLink(model.getLink());
+        setTitle(model.getTitle());
+
     }
 
     public long getId() {

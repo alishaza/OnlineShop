@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.products;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +14,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Product implements GenericEntity<Product> {
     @Id
     @GeneratedValue
     private long id;
@@ -51,6 +52,18 @@ public class Product {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    @Override
+    public void update(Product model) {
+        setVisitCount(model.getVisitCount());
+        setDescription(model.getDescription());
+        setEnable(model.isEnable());
+        setTitle(model.getTitle());
+        setPrice(model.getPrice());
+        setExists(model.isExists());
+        setImage(model.getImage());
+
     }
 
     public long getId() {

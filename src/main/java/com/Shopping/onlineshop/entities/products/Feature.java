@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.products;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,9 +14,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Feature {
+public class Feature implements GenericEntity<Feature> {
     @Id
     @GeneratedValue
+    private  long id ;
     private String name;
     private String value;
 
@@ -33,5 +35,20 @@ public class Feature {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public void update(Feature model) {
+        model.setName(model.getName());
+        model.setValue(model.getValue());
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

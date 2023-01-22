@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.site;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Slider {
+public class Slider implements GenericEntity<Slider> {
     @Id
     @GeneratedValue
     private long id;
@@ -31,6 +32,16 @@ public class Slider {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    @Override
+    public void update(Slider model) {
+        setEnable(model.isEnable());
+        setTitle(model.getTitle());
+        setDescription(model.getDescription());
+        setImage(model.getImage());
+        setLink(model.getLink());
+        setOrder(model.getOrder());
     }
 
     public long getId() {

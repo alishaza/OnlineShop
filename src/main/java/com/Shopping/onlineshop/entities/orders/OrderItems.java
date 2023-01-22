@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.orders;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import com.Shopping.onlineshop.entities.people.Customer;
 import com.Shopping.onlineshop.entities.products.Product;
 import jakarta.persistence.Entity;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderItems {
+public class OrderItems implements GenericEntity<OrderItems> {
     @Id
     @GeneratedValue
     private long id;
@@ -32,6 +33,13 @@ public class OrderItems {
     private Integer count;
 
     private long price;
+
+    @Override
+    public void update(OrderItems model) {
+        setCount(model.getCount());
+        setPrice(model.getPrice());
+
+    }
 
     public long getId() {
         return id;

@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.products;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,13 +14,21 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductCategory {
+public class ProductCategory implements GenericEntity<ProductCategory> {
     @Id
     @GeneratedValue
     private long id;
     private String title;
     private String description;
     private String image;
+
+    @Override
+    public void update(ProductCategory model) {
+        setDescription(model.getDescription());
+        setTitle(model.getTitle());
+        setImage(model.getImage());
+
+    }
 
     public long getId() {
         return id;

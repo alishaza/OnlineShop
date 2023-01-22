@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.people;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Customer implements GenericEntity<Customer> {
 
     @Id
     @GeneratedValue
@@ -33,4 +34,15 @@ public class Customer {
             name="user_id"
     )
     private User user;
+
+    @Override
+    public void update(Customer model) {
+        setAddress(model.getAddress());
+        setFirstname(model.getFirstname());
+        setEmail(model.getEmail());
+        setLastname(model.getLastname());
+        setPostalcode(model.getPostalcode());
+        setTelegram_id(model.getTelegram_id());
+        setMobile(model.getMobile());
+    }
 }

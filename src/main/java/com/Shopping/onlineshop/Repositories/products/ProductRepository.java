@@ -1,12 +1,14 @@
-package com.Shopping.onlineshop.Repositories;
+package com.Shopping.onlineshop.Repositories.products;
 
+import com.Shopping.onlineshop.Repositories.GenericRepository;
 import com.Shopping.onlineshop.entities.products.Product;
+import com.Shopping.onlineshop.entities.site.Nav;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends CrudRepository<Product,Long> {
+public interface ProductRepository extends GenericRepository<Product> {
 
     @Query("from Product where category.id = :category_id")
     List<Product> findAllByCategory(long category_id);

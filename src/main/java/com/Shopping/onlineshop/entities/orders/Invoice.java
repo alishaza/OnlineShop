@@ -1,5 +1,6 @@
 package com.Shopping.onlineshop.entities.orders;
 
+import com.Shopping.onlineshop.entities.GenericEntity;
 import com.Shopping.onlineshop.entities.people.Customer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Invoice {
+public class Invoice implements GenericEntity<Invoice> {
+
     @Id
     @GeneratedValue
     private long id;
@@ -31,7 +33,13 @@ public class Invoice {
 
     @OneToMany
     @JoinColumn(name = "order_items")
-    private List<OrderItems> orderIte;
+    private List<OrderItems> orderItems;
+
+    @Override
+    public void update(Invoice model) {
+        setInvoiceDate(model.getInvoiceDate());
+        setPayedDate(model.getPayedDate());
+    }
 
     public long getId() {
         return id;
@@ -66,10 +74,10 @@ public class Invoice {
     }
 
     public List<OrderItems> getOrderIte() {
-        return orderIte;
+        return orderItems;
     }
 
-    public void setOrderIte(List<OrderItems> orderIte) {
-        this.orderIte = orderIte;
+    public void setOrderIte(List<OrderItems> orderItems) {
+        this.orderItems = orderItems;
     }
 }
