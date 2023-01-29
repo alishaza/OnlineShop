@@ -1,10 +1,8 @@
 package com.Shopping.onlineshop.Repositories.products;
 
-import com.Shopping.onlineshop.Repositories.GenericRepository;
+import com.Shopping.onlineshop.Repositories.Generics.GenericRepository;
 import com.Shopping.onlineshop.entities.products.Product;
-import com.Shopping.onlineshop.entities.site.Nav;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 

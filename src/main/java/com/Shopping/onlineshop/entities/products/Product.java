@@ -1,6 +1,6 @@
 package com.Shopping.onlineshop.entities.products;
 
-import com.Shopping.onlineshop.entities.GenericEntity;
+import com.Shopping.onlineshop.entities.Generics.GenericEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +27,9 @@ public class Product implements GenericEntity<Product> {
 
     @ManyToOne
     private ProductCategory category;
+
+    @ManyToMany
+    private List<Size> size;
 
     @ManyToMany
     private List<Color> color;
@@ -137,4 +140,37 @@ public class Product implements GenericEntity<Product> {
     public void setFeatures(List<Feature> features) {
         this.features = features;
     }
+
+
+    public void removeColor(long id){
+        Color color = getColor().stream().filter(x->x.getId() == id ).findFirst().get();
+        getColor().remove(color);
+
+    }
+    public void addColor(Color color){
+        getColor().add(color);
+    }
+
+    public void removeFeature(long id){
+        Feature feature = getFeatures().stream().filter(x->x.getId() ==id).findFirst().get();
+        getFeatures().remove(feature);
+    }
+
+    public void addFeature(Feature feature)
+    {
+        getFeatures().add(feature);
+    }
+
+    public void removeSize(long id){
+        Size size = getSize().stream().filter(x->x.getId() ==id).findFirst().get();
+        getSize().remove(size);
+    }
+
+    public void addSize(Size size)
+    {
+        getSize().add(size);
+    }
+
+
+
 }

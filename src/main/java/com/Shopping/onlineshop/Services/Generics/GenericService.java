@@ -1,7 +1,9 @@
-package com.Shopping.onlineshop.Services;
+package com.Shopping.onlineshop.Services.Generics;
 
-import com.Shopping.onlineshop.Repositories.GenericRepository;
-import com.Shopping.onlineshop.entities.GenericEntity;
+import com.Shopping.onlineshop.Repositories.Generics.GenericRepository;
+import com.Shopping.onlineshop.entities.Generics.GenericEntity;
+
+import java.util.List;
 
 
 public abstract class GenericService<T extends GenericEntity<T>> {
@@ -14,6 +16,9 @@ public abstract class GenericService<T extends GenericEntity<T>> {
     public T get(Long id){
         return   repository.findById(id).get();
 
+    }
+    public List<T> getAll(){
+        return  repository.findAll();
     }
 
     public T update( T model){

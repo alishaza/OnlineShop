@@ -1,4 +1,4 @@
-package com.Shopping.onlineshop.entities;
+package com.Shopping.onlineshop.entities.Generics;
 
 public interface GenericEntity <T>{
 

@@ -1,6 +1,6 @@
 package com.Shopping.onlineshop.entities.products;
 
-import com.Shopping.onlineshop.entities.GenericEntity;
+import com.Shopping.onlineshop.entities.Generics.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

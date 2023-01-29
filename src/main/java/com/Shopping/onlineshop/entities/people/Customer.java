@@ -1,6 +1,6 @@
 package com.Shopping.onlineshop.entities.people;
 
-import com.Shopping.onlineshop.entities.GenericEntity;
+import com.Shopping.onlineshop.entities.Generics.GenericEntity;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

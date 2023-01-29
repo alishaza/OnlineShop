@@ -1,6 +1,6 @@
 package com.Shopping.onlineshop.entities.orders;
 
-import com.Shopping.onlineshop.entities.GenericEntity;
+import com.Shopping.onlineshop.entities.Generics.GenericEntity;
 import com.Shopping.onlineshop.entities.people.Customer;
 import com.Shopping.onlineshop.entities.products.Product;
 import jakarta.persistence.Entity;
